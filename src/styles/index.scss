@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap');
+
+$very_dark_blue: hsl(226, 43%, 10%);
+$dark_blue: hsl(236, 45%, 20%);
+$desaturated_blue: hsl(235, 45%, 61%);
+$pale_blue: hsl(236, 100%, 87%);
+$blue: hsl(246, 80%, 60%);
+
+$work: hsl(15, 100%, 70%);
+$play: hsl(195, 74%, 62%);
+$study: hsl(348, 100%, 68%);
+$exercise: hsl(145, 58%, 55%);
+$social: hsl(264, 64%, 52%);
+$self_care: hsl(43, 84%, 65%);
+
+
+@import "./sidebar.scss";
+@import "./cards.scss";
+
+
+body {
+  background: $very_dark_blue;
+
+  .container {
+    font-family: Rubik;
+    margin: 0 auto;
+    display: grid;
+    grid-template: auto / 25% 75%;
+    grid-gap: 40px;
+    align-items: center;
+    padding: 96px 160px;
+    height: 100%;
+    margin: 0;
+  }
+}
+
+
+// Media Queries
+
+@media screen and (max-width: 1024px) {
+  body {
+    .container {
+      grid-template-columns: 1fr;
+      padding: 50px;
+      grid-gap: 25px;
+
+      .sidebar {
+        .user-details {
+          height: 100px;
+          display: flex;
+          gap: 15px;
+          align-items: center;
+          justify-content: center;
+
+          .content {
+            margin: 0;
+
+            .user-name {
+              font-size: 24px;
+            }
+          }
+        }
+
+        .menu {
+          flex-direction: row;
+          justify-content: space-around;
+        }
+      }
+    }
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  body {
+    .container {
+      padding: 50px 20px;
+      .card-list {
+        grid-template: auto / 1fr;
+        grid-gap: 25px;
+
+        .card {
+          .card-body {
+            .header {
+              margin-bottom: 15px;
+            }
+
+            .timeframe {
+              flex-direction: row;
+              align-items: center;
+              justify-content: space-between;
+
+              .current {
+                font-size: 35px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

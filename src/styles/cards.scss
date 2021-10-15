@@ -1,0 +1,131 @@
+.card-list {
+  display: grid;
+  grid-template: repeat(2, auto) / repeat(3, 1fr);
+  grid-gap: 16px 40px;
+  align-content: space-between;
+  margin: 0;
+  padding: 0;
+
+  .card {
+    border-radius: 16px 16px 20px 20px;
+    display: grid;
+    grid-template: 47px / 1fr;
+
+    &:first-child {
+      .card-header {
+        display: block;
+        background: url('../assets/icon-work.svg') 87% 26% no-repeat;
+      }
+
+      background: $work;
+    }
+
+    &:nth-child(2) {
+      .card-header {
+        display: block;
+        background: url('../assets/icon-play.svg') 87% 26% no-repeat;
+      }
+
+      background: $play;
+    }
+
+    &:nth-child(3) {
+      .card-header {
+        display: block;
+        background: url('../assets/icon-study.svg') 87% 26% no-repeat;
+      }
+
+      background: $study;
+    }
+
+    &:nth-child(4) {
+      .card-header {
+        display: block;
+        background: url('../assets/icon-exercise.svg') 87% 26% no-repeat;
+      }
+
+      background: $exercise
+    }
+
+    &:nth-child(5) {
+      .card-header {
+        display: block;
+        background: url('../assets/icon-social.svg') 87% 26% no-repeat;
+      }
+
+      background: $social;
+    }
+
+    &:last-child {
+      .card-header {
+        display: block;
+        background: url('../assets/icon-self-care.svg') 87% 26% no-repeat;
+      }
+
+      background: $self_care;
+    }
+
+    .card-body {
+      padding: 28px 20px;
+      border-radius: 16px;
+      background: $dark_blue;
+      overflow: hidden;
+      cursor: pointer;
+
+      &:hover {
+        background: rgb(34, 38, 87);
+      }
+
+      .header {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        margin-bottom: 20px;
+
+        i:hover {
+          svg>path{
+            fill: #fff;
+          }
+        }
+      }
+
+      .card-title, .current {
+        color: #fff;
+      }
+
+      .card-title {
+        font: {
+          size: 16px;
+          weight: 500;
+        }
+      }
+
+      .current {
+        font: {
+          size: 40px;
+          weight: 300;
+        }
+      }
+
+      .previous {
+        font: {
+          size: 16px;
+          weight: 400;
+        }
+      }
+
+      .previous {
+        color: $pale_blue;
+      }
+
+      .card-title, .current, .previous {
+        margin: 0;
+      }
+
+      .timeframe {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+  }
+}
